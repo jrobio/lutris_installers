@@ -20,7 +20,7 @@ script:
       name: Moving manual to /man directory.
       command: mv -n $manual $GAMEDIR/man
   - extract:
-      name: Extracting Star Trek Pinball archive.
+      name: Extracting Star Trek Pinball archive into /iso.
       dst: $GAMEDIR/iso
       file: stpin
       format: zip
