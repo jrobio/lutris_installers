@@ -4,7 +4,7 @@ version: Installer
 slug: star-trek-pinball-installer
 runner: dosbox
 year: 1998
-version: Windows
+version: CUE/BIN
 
 script:
   files:
