@@ -1,3 +1,6 @@
 # Star Trek Pinball
 
-The default selections for both audio configs work well. With the current configuration, play is quite framey, but I am not entirely sure if that is a feature of the original software or if the dosbox config can be further optimized.
+This script installs Star Trek Pinball for DOSBox. Default options during installation are recommended. Please set both audio devices.
+
+- This script expects a zipped archive containing StarT-P.cue/bin pair
+- Please report issues to the lutris_installer repo: https://github.com/jrobio/lutris_installers
