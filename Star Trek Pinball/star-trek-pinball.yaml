@@ -1,0 +1,84 @@
+name: Star Trek Pinball
+game_slug: star-trek-pinball
+version: Installer
+slug: star-trek-pinball-installer
+runner: dosbox
+year: 1998
+version: MyAbandonware
+
+script:
+  files:
+  - stpin: N/A:Select file Star-Trek-Pinball_DOS_EN.zip
+  - manual: https://gaming.trekcore.com/startrekpinball/downloads/manual.pdf
+  game:
+    main_file: stpin.conf
+  installer:
+  - execute:
+      name: Creating game directory structure.
+      command: mkdir -p $GAMEDIR/{game,iso,man}
+  - execute:
+      name: Moving manual to /man directory.
+      command: mv -n $manual $GAMEDIR/man
+  - extract:
+      name: Extracting Star Trek Pinball archive.
+      dst: $GAMEDIR/iso
+      file: stpin
+      format: zip
+  - write-file:
+      content: '[sdl]
+        
+        fullscreen=true
+
+        fulldouble=true
+
+        fullresolution=desktop
+
+        output=opengl
+
+        [autoexec]
+
+        mount c $GAMEDIR/game
+      
+        mount i $GAMEDIR/iso
+      
+        i:
+      
+        imgmount d StarT-P.cue -t iso
+      
+        d:
+      
+        install
+        
+        exit'
+      file: $GAMEDIR/stpin-setup.conf
+  - task:
+      config_file: $GAMEDIR/stpin-setup.conf
+      name: dosexec
+      working_dir: $GAMEDIR/game
+  - write_file:
+      content: '[sdl]
+
+        fullscreen=true
+
+        fulldouble=true
+
+        fullresolution=desktop
+
+        output=opengl
+      
+        [autoexec]
+
+        imgmount i $GAMEDIR/iso -t iso
+        
+        mount c $GAMEDIR/game
+        
+        c:
+        
+        cd intrplay
+        
+        cd stpin
+        
+        stpin
+        
+        exit'
+      file: $GAMEDIR/stpin.conf
