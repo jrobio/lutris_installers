@@ -4,4 +4,4 @@ A repository containing all the lutris scripts I maintain. If you have suggestio
 
 ## Acknowledgements
 
-- [legluondunet/MyLittleLutrisScripts:](https://github.com/legluondunet/MyLittleLutrisScripts) For maintaining excellent scripts and giving me the idea to do the same.
+- [legluondunet/MyLittleLutrisScripts:](https://github.com/legluondunet/MyLittleLutrisScripts) For maintaining excellent scripts.
