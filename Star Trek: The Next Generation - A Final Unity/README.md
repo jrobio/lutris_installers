@@ -23,6 +23,6 @@ Select this install script if your system cannot easily add binaries from a trad
 
 ## Acknowledgements
 
-- Trek Core (https://www.trekcore.com/) for maintaining accurate and obscure information and media about all things Star Trek.
-- MyAbandonware (https://www.myabandonware.com) for keeping old games alive and providing excellent install instructions in the comments.
-- Greg Kokanosky (http://gregory.kokanosky.free.fr/v4/) for creating nrg2iso.
+- [Trek Core](https://www.trekcore.com/) for maintaining accurate and obscure information and media about all things Star Trek.
+- [MyAbandonware](https://www.myabandonware.com) for keeping old games alive and providing excellent install instructions in the comments.
+- [Greg Kokanosky](http://gregory.kokanosky.free.fr/v4/) for creating nrg2iso.
