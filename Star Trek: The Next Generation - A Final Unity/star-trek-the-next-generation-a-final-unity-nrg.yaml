@@ -3,7 +3,7 @@ game_slug: star-trek-the-next-generation-a-final-unity
 version: Installer
 description: "Star Trek: The Next Generation - A Final Unity. Abandonware for DOSBox."
 notes: "- expects a zipped nrg\r\n- requires nrg2iso"
-slug: star-trek-the-next-generation-a-final-unity-installer
+slug: star-trek-the-next-generation-a-final-unity-dosbox-nrg
 runner: dosbox
 year: 1995
 version: NRG
