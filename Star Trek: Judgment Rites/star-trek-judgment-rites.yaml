@@ -1,0 +1,19 @@
+name: "Star Trek: Judgment Rites"
+game_slug: star-trek-judgment-rites
+version: GOG Linux
+slug: star-trek-judgment-rites-gog-linux
+runner: linux
+
+script:
+  files:
+  - goginstaller: N/A:Please select the GOG.com Linux installer
+  game:
+    exe: start.sh
+  installer:
+  - extract:
+      dst: $CACHE/GOG
+      file: goginstaller
+      format: zip
+  - merge:
+      dst: $GAMEDIR
+      src: $CACHE/GOG/data/noarch/
