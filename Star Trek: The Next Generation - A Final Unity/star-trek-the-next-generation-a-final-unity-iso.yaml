@@ -1,20 +1,16 @@
 name: "Star Trek: The Next Generation - A Final Unity"
 game_slug: star-trek-the-next-generation-a-final-unity
 version: Installer
-description: "Star Trek: The Next Generation - A Final Unity - Abandonware for DOSBox."
-notes: "- expects a zipped nrg\r\n- requires nrg2iso"
+description: "Star Trek: The Next Generation - A Final Unity. Abandonware for DOSBox."
+notes: "- expects an iso\r\n- unlike nrg version, does not require nrg2iso\r\n- suitable for systems with readonly filesystems"
 slug: star-trek-the-next-generation-a-final-unity-installer
 runner: dosbox
 year: 1995
 version: ISO
-require-binaries: nrg2iso
 
 script:
-  variables:
-    INPUT: Star Trek The Next Generation - A Final Unity.nrg
-    OUTPUT: Star Trek The Next Generation - A Final Unity.iso
   files:
-  - sttngafu: N/A:Select file Star-Trek-The-Next-Generation---A-Final-Unity_DOS_EN_ISO-Version.zip
+  - sttngafu: N/A:Select file Star Trek The Next Generation - A Final Unity.iso
   - manual: 
       url: https://www.myabandonware.com/download/g1u-star-trek-the-next-generation-a-final-unity
       filename: manual.pdf
@@ -28,17 +24,9 @@ script:
       name: Moving manual to /man directory.
       src: manual
       dst: $GAMEDIR/man
-  - extract:
-      name: "Extracting Star Trek: The Next Generation - A Final Unity archive into $CACHE."
-      dst: $CACHE
-      file: sttngafu
-      format: zip
-  - execute:
-      name: Converting *.nrg to *.iso.
-      command: nrg2iso "$CACHE/$INPUT" "$CACHE/$OUTPUT"
   - move:
-      name: Moving *.iso to $GAMEDIR/iso
-      src: $CACHE/$OUTPUT
+      name: Moving sttngafu to $GAMEDIR/iso
+      src: sttngafu
       dst: $GAMEDIR/iso
   - write-file:
       content: '[sdl]
