@@ -1,6 +1,8 @@
 name: Star Trek Pinball
 game_slug: star-trek-pinball
 version: Installer
+description: Star Trek Pinball - Abandonware for DOSBox
+notes: "- expects a zipped iso."
 slug: star-trek-pinball-installer
 runner: dosbox
 year: 1998
@@ -16,9 +18,10 @@ script:
   - execute:
       name: Creating game directory structure.
       command: mkdir -p $GAMEDIR/{game,iso,man}
-  - execute:
+  - move:
       name: Moving manual to /man directory.
-      command: mv -n $manual $GAMEDIR/man
+      src: manual
+      dst: $GAMEDIR/man
   - extract:
       name: Extracting Star Trek Pinball archive into /iso.
       dst: $GAMEDIR/iso
@@ -50,9 +53,9 @@ script:
         install
         
         exit'
-      file: $GAMEDIR/stpin-setup.conf
+      file: $CACHE/stpin-setup.conf
   - task:
-      config_file: $GAMEDIR/stpin-setup.conf
+      config_file: $CACHE/stpin-setup.conf
       name: dosexec
       working_dir: $GAMEDIR/game
   - write_file:
@@ -68,7 +71,11 @@ script:
       
         [autoexec]
 
-        imgmount i $GAMEDIR/iso -t iso
+        mount i $GAMEDIR/iso
+
+        i:
+
+        imgmount d StarT-P.cue -t iso
         
         mount c $GAMEDIR/game
         
