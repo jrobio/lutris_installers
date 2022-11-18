@@ -1,0 +1,100 @@
+name: "Star Trek: The Next Generation - A Final Unity"
+game_slug: star-trek-the-next-generation-a-final-unity
+version: Installer
+slug: star-trek-the-next-generation-a-final-unity-installer
+runner: dosbox
+year: 1995
+version: ISO
+require-binaries: nrg2iso
+
+script:
+  variables:
+    INPUT: Star Trek The Next Generation - A Final Unity.nrg
+    OUTPUT: Star Trek The Next Generation - A Final Unity.iso
+  files:
+  - sttngafu: N/A:Select file Star-Trek-The-Next-Generation---A-Final-Unity_DOS_EN_ISO-Version.zip
+  - manual: 
+      url: https://www.myabandonware.com/download/g1u-star-trek-the-next-generation-a-final-unity
+      filename: manual.pdf
+  game:
+    main_file: sttngafu.conf
+  installer:
+  - execute:
+      name: Creating game directory structure.
+      command: mkdir -p $GAMEDIR/{game,iso,man}
+  - move:
+      name: Moving manual to /man directory.
+      src: manual
+      dst: $GAMEDIR/man
+  - extract:
+      name: "Extracting Star Trek: The Next Generation - A Final Unity archive into $CACHE."
+      dst: $CACHE
+      file: sttngafu
+      format: zip
+  - execute:
+      name: Converting *.nrg to *.iso.
+      command: nrg2iso "$CACHE/$INPUT" "$CACHE/$OUTPUT"
+  - move:
+      name: Moving *.iso to $GAMEDIR/iso
+      src: $CACHE/$OUTPUT
+      dst: $GAMEDIR/iso
+  - write-file:
+      content: '[sdl]
+        
+        fullscreen=true
+
+        fulldouble=true
+
+        fullresolution=desktop
+
+        output=opengl
+
+        [autoexec]
+
+        mount c $GAMEDIR/game
+      
+        mount i $GAMEDIR/iso
+      
+        i:
+      
+        imgmount d STARTR~1.ISO -t iso
+      
+        d:
+      
+        install
+        
+        exit'
+      file: $CACHE/sttngafu-setup.conf
+  - task:
+      config_file: $CACHE/sttngafu-setup.conf
+      name: dosexec
+      working_dir: $GAMEDIR/game
+  - write_file:
+      content: '[sdl]
+
+        fullscreen=true
+
+        fulldouble=true
+
+        fullresolution=desktop
+
+        output=opengl
+      
+        [autoexec]
+
+        mount i $GAMEDIR/iso/
+
+        i:
+
+        imgmount d STARTR~1.ISO -t iso
+        
+        mount c $GAMEDIR/game
+        
+        c:
+        
+        cd sttng
+
+        sttng
+
+        exit'
+      file: $GAMEDIR/sttngafu.conf

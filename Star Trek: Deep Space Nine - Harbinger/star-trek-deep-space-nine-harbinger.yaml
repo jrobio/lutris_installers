@@ -1,0 +1,87 @@
+name: "Star Trek: Deep Space Nine - Harbinger"
+game_slug: star-trek-deep-space-nine-harbinger
+version: Installer
+slug: star-trek-deep-space-nine-harbinger-installer
+runner: dosbox
+year: 1996
+version: CUE/BIN
+
+script:
+  files:
+  - stds9h: N/A:Select file Star-Trek-Deep-Space-Nine---Harbinger_DOS_EN_ISO-Version.zip
+  - patch: https://gaming.trekcore.com/harbinger/downloads/DOS-Harbinger_Patch.zip
+  game:
+    main_file: stds9h.conf
+  installer:
+  - execute:
+      name: Creating game directory structure.
+      command: mkdir -p $GAMEDIR/{game,iso,man}
+  - extract:
+      name: "Extracting Star Trek: Deep Space Nine - Harbinger archive into /iso."
+      dst: $GAMEDIR/iso
+      file: stds9h
+      format: zip
+  - extract:
+      name: "Extracting Star Trek: Deep Space Nine - Harbinger archive into /iso."
+      dst: $CACHE
+      file: patch
+      format: zip
+  - write-file:
+      content: '[sdl]
+        
+        fullscreen=true
+
+        fulldouble=true
+
+        fullresolution=desktop
+
+        output=opengl
+
+        [autoexec]
+
+        mount c $GAMEDIR/game
+      
+        mount i $GAMEDIR/iso
+      
+        i:
+      
+        imgmount d DISKONE.CUE DISKTWO.CUE -t iso
+      
+        d:
+      
+        install
+        
+        exit'
+      file: $GAMEDIR/stds9h-setup.conf
+  - task:
+      config_file: $GAMEDIR/stds9h-setup.conf
+      name: dosexec
+      working_dir: $GAMEDIR/game
+  - execute:
+      name: Patching Game.
+      command: cp $CACHE/DEEP.EXE $GAMEDIR/game/DS9HARB/
+  - write_file:
+      content: '[sdl]
+
+        fullscreen=true
+
+        fulldouble=true
+
+        fullresolution=desktop
+
+        output=opengl
+      
+        [autoexec]
+
+        imgmount i $GAMEDIR/iso/DISKONE.CUE $GAMEDIR/iso/DISKTWO.CUE -t iso
+        
+        mount c $GAMEDIR/game
+        
+        c:
+        
+        cd ds9harb
+
+        ds9
+
+        exit'
+      file: $GAMEDIR/stds9h.conf
