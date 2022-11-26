@@ -7,7 +7,7 @@ This script installs Star Trek: Judgment Rites through Wine.
 
 ## Wine Version
 
-- The linux version of Star Trek: Judgment Rites requires system libraries not present in Lutris' Runtime environment. This installer is for systems that cannot easily install additional libraries through a traditional package manager (ex. Valve's Steam Deck)
+- The linux version of Star Trek: Judgment Rites requires system libraries not present in Lutris' Runtime environment. This installer is for systems that cannot easily install additional libraries through a traditional package manager (ex. Valve's Steam Deck).
 
 ## Acknowledgements
 
