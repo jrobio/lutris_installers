@@ -11,4 +11,6 @@ This script installs Star Trek: Judgment Rites through Wine.
 
 ## Acknowledgements
 
+- [Trek Core](https://www.trekcore.com/) for maintaining accurate and obscure information and media about all things Star Trek.
 - [Good Old Games](https://www.gog.com/en/game/star_trek_starfleet_command_iii) figuring out the rights on old games ain't easy, it is appreciated.
+

@@ -7,5 +7,5 @@ This script installs Star Trek Pinball for DOSBox. Default options during instal
 
 ## Acknowledgements
 
-- Trek Core (https://www.trekcore.com/) for maintaining accurate and obscure information and media about all things Star Trek.
-- MyAbandonware (https://www.myabandonware.com) for keeping old games alive.
+- [Trek Core](https://www.trekcore.com/) for maintaining accurate and obscure information and media about all things Star Trek.
+- [MyAbandonware](https://www.myabandonware.com) for keeping old games alive and providing excellent install instructions in the comments.

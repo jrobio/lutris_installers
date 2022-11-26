@@ -18,6 +18,7 @@ This script installs Star Trek: Starfleet Command III through Wine.
 
 ## Acknowledgements
 
+- [Trek Core](https://www.trekcore.com/) for maintaining accurate and obscure information and media about all things Star Trek.
 - [Jan_B](https://www.moddb.com/members/jan-b) thank you for continuing to iterate and update this game through your [mod](https://www.moddb.com/mods/sfc-upgrade-mod-33-all-in-one/downloads/sfc-upgrade-mod-3-3-all-in-one).
 - [Good Old Games](https://www.gog.com/en/game/star_trek_starfleet_command_iii) Figuring out the rights on old games ain't easy, it is appreciated.
 - [This Lutris forum post](https://forums.lutris.net/t/star-trek-starfleet-command-iii/8878) and members [Autolycus](https://forums.lutris.net/u/Autolycus), [tfk](https://forums.lutris.net/u/tfk), and [Michel86](https://forums.lutris.net/u/Michel86) for figuring out the right wine components to get SFC Upgrade 3.3 working well.
