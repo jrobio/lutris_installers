@@ -1,0 +1,34 @@
+name: "Star Trek: Starfleet Command III"
+game_slug: star-trek-starfleet-command-iii
+version: "GOG - SFC Upgrade 3.3"
+description: "Star Trek: Starfleet Command III with SFC Upgrade 3.3. GOG for Wine."
+notes: "- Expects GOG's version of Starfleet Command III.\r\n- Expects zipped archive of Jan_B's SFC Upgrade 3.3 mod available at ModDB."
+slug: star-trek-starfleet-command-iii-sfc-upgrade-33
+runner: wine
+year: 2002
+
+script:
+  files:
+  - installer: "N/A:Select the game's setup file"
+  - mod: "N/A:Select the mod archive SFC_Upgrade_Mod_3.3_All_In_One.6.zip"
+  game:
+    gogid: 1156468375
+    prefix: $GAMEDIR
+    exe: "$GAMEDIR/drive_c/GOG Games/Star Trek SFC3/SFC3.exe"
+    working_dir: "$GAMEDIR/drive_c/GOG Games/Star Trek SFC3/"
+  installer:
+  - task:
+      executable: installer
+      name: wineexec
+  - task:
+      app: d3dxof
+      name: winetricks
+      silent: true
+  - extract:
+      name: "Extracting SFC Upgrade Mod 3.3 All in One"
+      dst: $CACHE
+      file: mod
+      format: zip
+  - task:
+      executable: "$CACHE/SFC3 Upgrade Mod 3.3 Installer.exe"
+      name: wineexec
