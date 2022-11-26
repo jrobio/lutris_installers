@@ -1,6 +1,5 @@
 name: Star Trek Pinball
 game_slug: star-trek-pinball
-version: Installer
 description: Star Trek Pinball - Abandonware for DOSBox
 notes: "- expects a zipped iso."
 slug: star-trek-pinball-installer
