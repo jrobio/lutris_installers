@@ -1,19 +1,21 @@
 name: "Star Trek: Judgment Rites"
 game_slug: star-trek-judgment-rites
-version: GOG Linux
-slug: star-trek-judgment-rites-gog-linux
-runner: linux
+version: GOG Windows
+description: "Star Trek: Judgment Rites"
+notes: "- expects the GOG Windows version of the game."
+slug: star-trek-judgment-rites-gog-wine
+runner: wine
+year: 1993
 
 script:
   files:
-  - goginstaller: N/A:Please select the GOG.com Linux installer
+  - installer: N/A:Please select the GOG Windows Installer
   game:
-    exe: start.sh
+    gogid: 1429089605
+    prefix: $GAMEDIR
+    exe: "$GAMEDIR/drive_c/GOG Games/Star Trek - Judgment Rites/Launch Star Trek - Judgment Rites Limited Collector's Edition.lnk"
+    working_dir: "$GAMEDIR/drive_c/GOG Games/Star Trek - Judgment Rites/"
   installer:
-  - extract:
-      dst: $CACHE/GOG
-      file: goginstaller
-      format: zip
-  - merge:
-      dst: $GAMEDIR
-      src: $CACHE/GOG/data/noarch/
+  - task:
+      executable: installer
+      name: wineexec
