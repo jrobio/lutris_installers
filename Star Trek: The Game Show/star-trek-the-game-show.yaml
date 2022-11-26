@@ -1,0 +1,45 @@
+name: "Star Trek: The Game Show"
+game_slug: star-trek-the-game-show
+version: Installer
+slug: star-trek-the-game-show-windows-iso
+runner: wine
+
+script:
+  game:
+    exe: $GAMEDIR/mygame
+    args: --some-args
+    prefix: $GAMEDIR/prefix
+    arch: win32
+    working_dir: $GAMEDIR/prefix
+  files:
+  - installer: "N/A:Select the game's setup file"
+  - manual_1: 
+      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/09manualpg1-2.jpg
+      filename: manual_1.jpg
+  - manual_2: 
+      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/10manualpg3-4.jpg
+      filename: manual_2.jpg 
+  - manual_3: 
+      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/11manualpg5-6.jpg
+      filename: manual_3.jpg
+  - manual_4: 
+      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/12manualpg7-8.jpg
+      filename: manual_4.jpg
+  - manual_5: 
+      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/13manualpg9-10.jpg
+      filename: manual_5.jpg
+  - manual_6: 
+      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/14manualpg11-12.jpg
+      filename: manual_6.jpg
+  installer:
+  - task:
+      executable: installer
+      name: wineexec
+      prefix: $GAMEDIR/prefix
+  wine:
+    Desktop: true
+    overrides:
+      ddraw.dll: n
+  system:
+    env:
+      SOMEENV: true
