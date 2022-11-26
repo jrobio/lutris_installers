@@ -2,6 +2,7 @@
 
 This script installs Star Trek: Deep Space Nine - Harbinger through DOSBox.
 
+- This script expects a zipped archive containing DISK(ONE|TWO).CUE/BIN pair.
 - Please report issues to the lutris_installer repo: https://github.com/jrobio/lutris_installers
 
 ## DOSBox Install Notes

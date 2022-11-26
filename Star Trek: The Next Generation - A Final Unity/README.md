@@ -15,11 +15,14 @@ This script installs Star Trek: The Next Generation - A Final Unity through DOSB
 
 ## NRG
 
-Select this install script if your system has nrg2iso installed, or you would like to install it.
+- This installer expects a zipped archive containing an file named Star Trek The Next Generation - A Final Unity.nrg
+- Select this install script if your system has nrg2iso installed, or you would like to install it.
 
 ## ISO
 
-Select this install script if your system cannot easily add binaries from a traditional package manager (ex. Valve's Steam Deck) and instead would rely on a flatpak of PowerISO to achieve a conversion from NRG to ISO.
+- This installer expects an ISO named Star Trek The Next Generation - A Final Unity.iso
+- Select this install script if your system cannot easily add binaries from a traditional package manager (ex. Valve's Steam Deck) and instead would rely on a flatpak of PowerISO to achieve a conversion from NRG to ISO.
+
 
 ## Acknowledgements
 
