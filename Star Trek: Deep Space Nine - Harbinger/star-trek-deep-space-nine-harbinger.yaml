@@ -1,6 +1,8 @@
 name: "Star Trek: Deep Space Nine - Harbinger"
 game_slug: star-trek-deep-space-nine-harbinger
 version: Installer
+description: "Star Trek: Deep Space Nine - Harbinger. Abandonware for DOSBox."
+notes: "- expects a zipped cue/bin disc pair."
 slug: star-trek-deep-space-nine-harbinger-installer
 runner: dosbox
 year: 1996
