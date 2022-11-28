@@ -2,6 +2,7 @@
 
 This script installs Star Trek: The Next Generation - A Final Unity through DOSBox.
 
+- The installer expects either a zipped archive containing an NRG or an ISO of the game.
 - Please report issues to the lutris_installer repo: https://github.com/jrobio/lutris_installers
 
 ## DOS install notes
