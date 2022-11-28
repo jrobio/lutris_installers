@@ -1,45 +1,30 @@
 name: "Star Trek: The Game Show"
 game_slug: star-trek-the-game-show
-version: Installer
-slug: star-trek-the-game-show-windows-iso
+description: "Star Trek: The Game Show. Abandonware for Wine."
+notes: "- expects a mounted disc\r\n- copies game files to prefix\r\n- installs quicktime"
+slug: star-trek-the-game-show-wine-iso
 runner: wine
+version: CDROM
+year: 1998
 
 script:
   game:
-    exe: $GAMEDIR/mygame
-    args: --some-args
-    prefix: $GAMEDIR/prefix
+    exe: $GAMEDIR/drive_c/Trektriv/mtplay95.exe
+    prefix: $GAMEDIR
     arch: win32
-    working_dir: $GAMEDIR/prefix
-  files:
-  - installer: "N/A:Select the game's setup file"
-  - manual_1: 
-      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/09manualpg1-2.jpg
-      filename: manual_1.jpg
-  - manual_2: 
-      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/10manualpg3-4.jpg
-      filename: manual_2.jpg 
-  - manual_3: 
-      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/11manualpg5-6.jpg
-      filename: manual_3.jpg
-  - manual_4: 
-      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/12manualpg7-8.jpg
-      filename: manual_4.jpg
-  - manual_5: 
-      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/13manualpg9-10.jpg
-      filename: manual_5.jpg
-  - manual_6: 
-      url: https://gaming.trekcore.com/gallery/albums/gameshow/misc/14manualpg11-12.jpg
-      filename: manual_6.jpg
+    working_dir: $GAMEDIR/drive_c/Trektriv
   installer:
+  - insert-disc:
+      description: Please mount disc
+      requires: install.exe
+  - merge:
+      description: moving disc files to game directory
+      src: $DISC
+      dst: $GAMEDIR/drive_c/Trektriv/
+  - execute:
+      description: changing permissions of disc files.
+      command: chmod -R 775 $GAMEDIR/drive_c/Trektriv
   - task:
-      executable: installer
+      description: Installing quicktime 32.
+      executable: $GAMEDIR/drive_c/Trektriv/qt32.exe
       name: wineexec
-      prefix: $GAMEDIR/prefix
-  wine:
-    Desktop: true
-    overrides:
-      ddraw.dll: n
-  system:
-    env:
-      SOMEENV: true
