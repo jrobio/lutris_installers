@@ -1,0 +1,37 @@
+name: "Star Trek: Voyager - Elite Force"
+game_slug: star-trek-voyager-elite-force
+description: "Star Trek: Voyager - Elite Force. GOG - Graphics Overhaul Project (GOP) mod for Wine."
+notes: "- Expects a rar archive containing the GOP mod\r\n- Requires install of Elite Force\r\n- Expects the Expansion to be installed (GOG version has this included)\r\n- Launch Elite Force at least once before using this installer.\r\n- Doesn't support resolutions below 1920x1080."
+slug: star-trek-voyager-elite-force-gog-gop
+runner: wine
+year: 2000
+version: GOG - Graphics Overhaul Project Mod
+
+script:
+  extends: star-trek-voyager-elite-force
+  variables:
+    CFG: "$GAMEDIR/drive_c/GOG Games/Star Trek Elite Force/BaseEF/autoexec.cfg"
+  files:
+  - mod: "N/A:Select the mod archive ef_gop_v0.90.rar."
+  game:
+      arch: win32
+      exe: "$GAMEDIR/drive_c/GOG Games/Star Trek Elite Force/Quake3.exe"
+      working_dir: "$GAMEDIR/drive_c/GOG Games/Star Trek Elite Force"
+  installer:
+  - extract:
+      description: "Extracting ef_gop_v0.90.rar"
+      dst: $CACHE
+      file: mod
+      format: rar
+  - merge:
+      src: $CACHE
+      dst: "$GAMEDIR/drive_c/GOG Games/Star Trek Elite Force"
+  - execute:
+      description: "Setting English language"
+      command: sed -i 's/DEUTSCH/ENGLISH/g' "$GAMEDIR/drive_c/GOG Games/Star Trek Elite Force/BaseEF/autoexec.cfg"
+  - execute:
+      description: "Setting Width to native desktop"
+      command: sed -i 's/seta r_customwidth "...."/seta r_customwidth "$RESOLUTION_WIDTH"/' "$GAMEDIR/drive_c/GOG Games/Star Trek Elite Force/BaseEF/autoexec.cfg"
+  - execute:
+      description: "Setting Height to native desktop"
+      command: sed -i 's/seta r_customheight "...."/seta r_customheight "$RESOLUTION_HEIGHT"/' "$GAMEDIR/drive_c/GOG Games/Star Trek Elite Force/BaseEF/autoexec.cfg"
