@@ -1,0 +1,13 @@
+name: "Star Trek: Deep Space Nine - The Fallen"
+game_slug: star-trek-deep-space-nine-the-fallen
+description: "Star Trek: Deep Space Nine - The Fallen. Abandonware for Wine."
+notes: "- expects a mounted disc"
+slug: star-trek-deep-space-nine-the-fallen-wine
+runner: wine
+year: 2000
+version: ISO - 
+
+script:
+  files:
+  game:
+  installer:
