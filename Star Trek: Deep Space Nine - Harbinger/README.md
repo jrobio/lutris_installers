@@ -12,5 +12,5 @@ This script installs Star Trek: Deep Space Nine - Harbinger through DOSBox.
 
 ## Acknowledgements
 
-- [Trek Core](https://www.trekcore.com/) for maintaining accurate and obscure information and media about all things Star Trek.
-- [MyAbandonware](http://www.myabandonware.com/) for keeping old games alive and providing excellent install instructions in the comments.
+- [MyAbandonware](https://www.myabandonware.com/game/star-trek-deep-space-nine-harbinger-dka) for keeping old games alive and providing excellent install instructions in the comments.
+- [Trek Core](https://gaming.trekcore.com/harbinger/) for maintaining accurate and obscure information and media about all things Star Trek.
