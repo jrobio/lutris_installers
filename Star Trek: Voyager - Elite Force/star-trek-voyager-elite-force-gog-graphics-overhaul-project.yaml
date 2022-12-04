@@ -9,8 +9,6 @@ version: GOG - Graphics Overhaul Project Mod
 
 script:
   extends: star-trek-voyager-elite-force
-  variables:
-    CFG: "$GAMEDIR/drive_c/GOG Games/Star Trek Elite Force/BaseEF/autoexec.cfg"
   files:
   - mod: "N/A:Select the mod archive ef_gop_v0.90.rar."
   game:
