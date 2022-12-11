@@ -1,0 +1,25 @@
+name: "Star Trek: Bridge Commander"
+game_slug: star-trek-bridge-commander
+description: "Star Trek: Bridge Commander. GOG - Remastered Mod for Wine."
+notes: 
+slug: star-trek-bridge-commander-gog-remastered
+runner: wine
+year: 2002
+version: GOG - Remastered Mod
+
+script:
+  files:
+  - installer: "N/A:Select the game's setup file"
+  - mod: "N/A:Select the mod archive"
+  - ntcore: 
+      url: https://ntcore.com/files/4gb_patch.zip
+  game:
+    gogid: 1478736295
+    prefix: $GAMEDIR
+    exe: "$GAMEDIR/drive_c/GOG Games/Star Trek Bridge Commander/stbc.exe"
+    working_dir: "$GAMEDIR/drive_c/GOG Games/Star Trek Bridge Commander"
+  installer:
+  - task:
+      executable: installer
+      name: wineexec
+  
