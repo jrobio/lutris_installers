@@ -8,6 +8,8 @@ runner: wine
 year: 2002
 
 script:
+  wine:
+    dxvk_version: v1.10.3
   files:
   - installer: "N/A:Select the game's setup file"
   - mod: "N/A:Select the mod archive SFC_Upgrade_Mod_3.3_All_In_One.6.zip"
@@ -32,3 +34,9 @@ script:
   - task:
       executable: "$CACHE/SFC3 Upgrade Mod 3.3 Installer.exe"
       name: wineexec
+  - execute:
+      name: Disabling GOG's ModelRendererR.dll
+      command: mv $GAMEDIR/drive_c/GOG\ Games/Star\ Trek\ SFC3/Components/ModelRendererR.dll $GAMEDIR/drive_c/GOG\ Games/Star\ Trek\ SFC3/Components/ModelRendererR.dll.bak
+  - execute:
+      name: Enabling old ModelRendererR.dll
+      command: mv $GAMEDIR/drive_c/GOG\ Games/Star\ Trek\ SFC3/Components/ModelRendererR_old.dll $GAMEDIR/drive_c/GOG\ Games/Star\ Trek\ SFC3/Components/ModelRendererR.dll
