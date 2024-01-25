@@ -1,0 +1,13 @@
+name: "Star Trek: Starfleet Command - Orion Pirates"
+game_slug: star-trek-starfleet-command-orion-pirates
+description: "Abandonware for Wine"
+notes: 
+slug: star-trek-starfleet-command-orion-pirates-wine
+runner: wine
+year: 2001
+version: ISO
+
+script:
+  files:
+  game:
+  installer:
