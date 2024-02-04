@@ -21,12 +21,10 @@ script:
       name: "Extracting Star Trek: Deep Space Nine - Harbinger archive into /iso."
       dst: $GAMEDIR/iso
       file: stds9h
-      format: zip
   - extract:
       name: "Extracting Star Trek: Deep Space Nine - Harbinger archive into /iso."
       dst: $CACHE
       file: patch
-      format: zip
   - write-file:
       content: |
         [sdl]
@@ -48,9 +46,9 @@ script:
       config_file: $GAMEDIR/stds9h-setup.conf
       name: dosexec
       working_dir: $GAMEDIR/game
-  - execute:
-      name: Patching Game.
-      command: cp $CACHE/DEEP.EXE $GAMEDIR/game/DS9HARB/
+  - merge:
+      src: $CACHE
+      dst: $GAMEDIR/game/DS9HARB/
   - write_file:
       content: |
         [sdl]
