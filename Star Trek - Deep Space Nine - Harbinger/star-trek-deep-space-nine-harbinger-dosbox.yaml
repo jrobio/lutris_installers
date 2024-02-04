@@ -28,31 +28,21 @@ script:
       file: patch
       format: zip
   - write-file:
-      content: '[sdl]
-        
+      content: |
+        [sdl]
         fullscreen=true
-
         fulldouble=true
-
         fullresolution=desktop
-
         output=opengl
 
         [autoexec]
-
         mount c $GAMEDIR/game
-      
         mount i $GAMEDIR/iso
-      
         i:
-      
         imgmount d DISKONE.CUE DISKTWO.CUE -t iso
-      
         d:
-      
         install
-        
-        exit'
+        exit
       file: $GAMEDIR/stds9h-setup.conf
   - task:
       config_file: $GAMEDIR/stds9h-setup.conf
@@ -62,27 +52,18 @@ script:
       name: Patching Game.
       command: cp $CACHE/DEEP.EXE $GAMEDIR/game/DS9HARB/
   - write_file:
-      content: '[sdl]
-
+      content: |
+        [sdl]
         fullscreen=true
-
         fulldouble=true
-
         fullresolution=desktop
-
         output=opengl
       
         [autoexec]
-
         imgmount i $GAMEDIR/iso/DISKONE.CUE $GAMEDIR/iso/DISKTWO.CUE -t iso
-        
         mount c $GAMEDIR/game
-        
         c:
-        
         cd ds9harb
-
         ds9
-
-        exit'
+        exit
       file: $GAMEDIR/stds9h.conf
