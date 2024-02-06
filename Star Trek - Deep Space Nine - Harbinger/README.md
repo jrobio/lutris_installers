@@ -12,7 +12,7 @@ This script installs Star Trek: Deep Space Nine - Harbinger through DOSBox.
 
 ## Known Issues
 
-- If DOSBox is failing to launch from script execution, execute ~/.local/share/lutris/runners/dosbox to identify missing libraries for system installation.
+- If DOSBox is failing to launch from script execution, execute `~/.local/share/lutris/runners/dosbox/dosbox` to identify missing libraries for system installation.
 
 ## Acknowledgements
 
