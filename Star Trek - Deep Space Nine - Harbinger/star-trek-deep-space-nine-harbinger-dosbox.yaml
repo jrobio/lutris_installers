@@ -14,7 +14,7 @@ notes: |
 
   ## Known Issues
 
-  - If DOSBox is failing to launch from script execution, execute ~/.local/share/lutris/runners/dosbox to identify missing libraries for system installation.
+  - If DOSBox is failing to launch from script execution, execute `~/.local/share/lutris/runners/dosbox/dosbox` to identify missing libraries for system installation.
 
   ## Acknowledgements
 
