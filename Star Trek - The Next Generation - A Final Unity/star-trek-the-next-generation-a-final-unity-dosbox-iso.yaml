@@ -1,7 +1,37 @@
 name: "Star Trek: The Next Generation - A Final Unity"
 game_slug: star-trek-the-next-generation-a-final-unity
 description: "Star Trek: The Next Generation - A Final Unity. Abandonware for DOSBox."
-notes: "- expects an iso\r\n- unlike nrg version, does not require nrg2iso\r\n- suitable for systems with readonly filesystems (ex. Valve's Steam Deck)"
+notes: |
+  This script installs Star Trek: The Next Generation - A Final Unity through DOSBox.
+
+  - The installer expects either a zipped archive containing an NRG or an ISO of the game.
+  - Please report issues to the lutris_installer repo: https://github.com/jrobio/lutris_installers
+
+  ## DOSBox Install Notes
+
+  - Install the optimal version of the game. 
+  - Installation appears to hang at different percentages but it will complete. You can elect to increase cycles here to speed up the process as long as they are returned to 3000 at the end.
+  - Configure hardware
+      - Setup the sound card through autodetection
+      - Setup video mode: Select the highest resolution and turn fullscreen on.
+  - Exit and save the configuration.
+
+  ## Versions
+
+  ### ISO
+
+  - This installer expects an ISO named Star Trek The Next Generation - A Final Unity.iso
+  - Select this install script if your system cannot easily add binaries from a traditional package manager (ex. Valve's Steam Deck) and instead would rely on a flatpak of PowerISO to achieve a conversion from NRG to ISO.
+
+  ## Known Issues
+
+  - If DOSBox is failing to launch from script execution, execute `~/.local/share/lutris/runners/dosbox/dosbox` to identify missing libraries for system installation.
+
+  ## Acknowledgements
+
+  - [Greg Kokanosky](http://gregory.kokanosky.free.fr/v4/) for creating nrg2iso.
+  - [MyAbandonware](https://www.myabandonware.com/game/star-trek-the-next-generation-a-final-unity-3qm) for keeping old games alive and for the helpful community.
+  - [Trek Core](https://gaming.trekcore.com/finalunity/) for maintaining accurate and obscure information as well as media about all things Star Trek.
 slug: star-trek-the-next-generation-a-final-unity-dosbox-iso
 runner: dosbox
 year: 1995
@@ -28,62 +58,41 @@ script:
       src: sttngafu
       dst: $GAMEDIR/iso
   - write-file:
-      content: '[sdl]
-        
+      content: |
+        [sdl]
         fullscreen=true
-
         fulldouble=true
-
         fullresolution=desktop
-
         output=opengl
 
         [autoexec]
-
         mount c $GAMEDIR/game
-      
         mount i $GAMEDIR/iso
-      
         i:
-      
         imgmount d STARTR~1.ISO -t iso
-      
         d:
-      
         install
-        
-        exit'
+        exit
       file: $CACHE/sttngafu-setup.conf
   - task:
       config_file: $CACHE/sttngafu-setup.conf
       name: dosexec
       working_dir: $GAMEDIR/game
   - write_file:
-      content: '[sdl]
-
+      content: |
+        [sdl]
         fullscreen=true
-
         fulldouble=true
-
         fullresolution=desktop
-
         output=opengl
-      
+
         [autoexec]
-
         mount i $GAMEDIR/iso/
-
         i:
-
         imgmount d STARTR~1.ISO -t iso
-        
         mount c $GAMEDIR/game
-        
         c:
-        
         cd sttng
-
         sttng
-
-        exit'
+        exit
       file: $GAMEDIR/sttngafu.conf

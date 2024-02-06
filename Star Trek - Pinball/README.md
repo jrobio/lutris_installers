@@ -9,6 +9,10 @@ This script installs Star Trek Pinball for DOSBox. Default options during instal
 
 - Default audio and video driver selections are expected and recommended.
 
+## Known Issues
+
+- If DOSBox is failing to launch from script execution, execute `~/.local/share/lutris/runners/dosbox/dosbox` to identify missing libraries for system installation.
+
 ## Acknowledgements
 
 - [MyAbandonware](https://www.myabandonware.com/search/q/star+trek+pinball) for keeping old games alive and providing excellent install instructions in the comments.

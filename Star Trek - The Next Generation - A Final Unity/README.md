@@ -26,6 +26,9 @@ This script installs Star Trek: The Next Generation - A Final Unity through DOSB
 - This installer expects an ISO named Star Trek The Next Generation - A Final Unity.iso
 - Select this install script if your system cannot easily add binaries from a traditional package manager (ex. Valve's Steam Deck) and instead would rely on a flatpak of PowerISO to achieve a conversion from NRG to ISO.
 
+## Known Issues
+
+- If DOSBox is failing to launch from script execution, execute `~/.local/share/lutris/runners/dosbox/dosbox` to identify missing libraries for system installation.
 
 ## Acknowledgements
 
