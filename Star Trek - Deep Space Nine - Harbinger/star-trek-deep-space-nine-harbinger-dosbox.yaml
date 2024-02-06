@@ -64,9 +64,9 @@ script:
       config_file: $GAMEDIR/stds9h-setup.conf
       name: dosexec
       working_dir: $GAMEDIR/game
-  # - merge:
-  #     src: $CACHE
-  #     dst: $GAMEDIR/game/DS9HARB/
+  - merge:
+      src: $CACHE
+      dst: $GAMEDIR/game/DS9HARB/
   - write_file:
       content: |
         [sdl]
