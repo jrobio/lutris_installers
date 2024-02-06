@@ -1,7 +1,25 @@
 name: "Star Trek: Deep Space Nine - Harbinger"
 game_slug: star-trek-deep-space-nine-harbinger
 description: "Star Trek: Deep Space Nine - Harbinger. Abandonware for DOSBox."
-notes: "- expects a zipped cue/bin disc pair."
+notes: |
+  This script installs Star Trek: Deep Space Nine - Harbinger through DOSBox.
+
+  - This script expects a zipped archive containing DISK(ONE|TWO).CUE/BIN pair.
+  - Please report issues to the lutris_installer repo: https://github.com/jrobio/lutris_installers
+
+  ## DOSBox Install Notes
+
+  - Accept the License information by typing "YES"
+  - Default selections for installtion, video, and audio configuration are appropriate and expected.
+
+  ## Known Issues
+
+  - If DOSBox is failing to launch from script execution, execute `~/.local/share/lutris/runners/dosbox/dosbox` to identify missing libraries for system installation.
+
+  ## Acknowledgements
+
+  - [MyAbandonware](https://www.myabandonware.com/game/star-trek-deep-space-nine-harbinger-dka) for keeping old games alive and providing excellent install instructions in the comments.
+  - [Trek Core](https://gaming.trekcore.com/harbinger/) for maintaining accurate and obscure information and media about all things Star Trek.
 slug: star-trek-deep-space-nine-harbinger-installer
 runner: dosbox
 year: 1996
@@ -12,7 +30,7 @@ script:
   - stds9h: N/A:Select file Star-Trek-Deep-Space-Nine---Harbinger_DOS_EN_ISO-Version.zip
   - patch: https://gaming.trekcore.com/harbinger/downloads/DOS-Harbinger_Patch.zip
   game:
-    main_file: stds9h.conf
+    main_file: $GAMEDIR/stds9h.conf
   installer:
   - execute:
       name: Creating game directory structure.
@@ -21,68 +39,47 @@ script:
       name: "Extracting Star Trek: Deep Space Nine - Harbinger archive into /iso."
       dst: $GAMEDIR/iso
       file: stds9h
-      format: zip
   - extract:
-      name: "Extracting Star Trek: Deep Space Nine - Harbinger archive into /iso."
+      name: "Extracting Star Trek: Deep Space Nine - Harbinger archive into CACHE."
       dst: $CACHE
       file: patch
-      format: zip
   - write-file:
-      content: '[sdl]
-        
+      content: |
+        [sdl]
         fullscreen=true
-
         fulldouble=true
-
         fullresolution=desktop
-
         output=opengl
 
         [autoexec]
-
         mount c $GAMEDIR/game
-      
         mount i $GAMEDIR/iso
-      
         i:
-      
         imgmount d DISKONE.CUE DISKTWO.CUE -t iso
-      
         d:
-      
         install
-        
-        exit'
+        exit
       file: $GAMEDIR/stds9h-setup.conf
   - task:
       config_file: $GAMEDIR/stds9h-setup.conf
       name: dosexec
       working_dir: $GAMEDIR/game
-  - execute:
-      name: Patching Game.
-      command: cp $CACHE/DEEP.EXE $GAMEDIR/game/DS9HARB/
+  - merge:
+      src: $CACHE
+      dst: $GAMEDIR/game/DS9HARB/
   - write_file:
-      content: '[sdl]
-
+      content: |
+        [sdl]
         fullscreen=true
-
         fulldouble=true
-
         fullresolution=desktop
-
         output=opengl
       
         [autoexec]
-
         imgmount i $GAMEDIR/iso/DISKONE.CUE $GAMEDIR/iso/DISKTWO.CUE -t iso
-        
         mount c $GAMEDIR/game
-        
         c:
-        
         cd ds9harb
-
         ds9
-
-        exit'
+        exit
       file: $GAMEDIR/stds9h.conf
