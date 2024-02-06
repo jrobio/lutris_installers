@@ -10,6 +10,10 @@ This script installs Star Trek: Deep Space Nine - Harbinger through DOSBox.
 - Accept the License information by typing "YES"
 - Default selections for installtion, video, and audio configuration are appropriate and expected.
 
+## Known Issues
+
+- If DOSBox is failing to launch from script execution, execute ~/.local/share/lutris/runners/dosbox to identify missing libraries for system installation.
+
 ## Acknowledgements
 
 - [MyAbandonware](https://www.myabandonware.com/game/star-trek-deep-space-nine-harbinger-dka) for keeping old games alive and providing excellent install instructions in the comments.
