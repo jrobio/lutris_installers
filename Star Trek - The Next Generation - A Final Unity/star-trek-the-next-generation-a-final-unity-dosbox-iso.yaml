@@ -1,6 +1,7 @@
 name: "Star Trek: The Next Generation - A Final Unity"
 game_slug: star-trek-the-next-generation-a-final-unity
-description: "Star Trek: The Next Generation - A Final Unity. Abandonware for DOSBox."
+description: "Star Trek: The Next Generation - A Final Unity. Abandonware for 
+DOSBox."
 notes: |
   This script installs Star Trek: The Next Generation - A Final Unity through DOSBox.
 
