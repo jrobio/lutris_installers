@@ -9,9 +9,9 @@ https://github.com/jrobio/lutris_installers
 ## Wine Install Notes
 
 - During Quicktime installation, you will be prompted to scan for existing 
-copies of quicktime. Select "Skip" and "Yes" to Cancel anyway. Otherwise, the 
+copies of quicktime. Select `Skip` and `Yes` to Cancel anyway. Otherwise, the 
 quicktime installer will attempt to look through all drives available in your 
-prefix, including your system mounted at "Z:".
+prefix, including your system mounted at `Z:`.
 
 ## Acknowledgements
 
