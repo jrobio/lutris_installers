@@ -1,6 +1,7 @@
-# <game name>
+# Star Trek: The Next Generation - Birth of the Federation
 
-This script installs <game name> through <runner>.
+This script installs **Star Trek: The Next Generation - Birth of the Federation** 
+through Wine.
 
 - Please report issues to the lutris_installer repo: 
 https://github.com/jrobio/lutris_installers
