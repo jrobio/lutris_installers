@@ -1,0 +1,45 @@
+name: "Star Trek: Starfleet Command - Gold Edition"
+game_slug: star-trek-starfleet-command
+description: "Star Trek: Starfleet Command - Gold Edition + HD Patch"
+notes: 
+slug: star-trek-stafleet-command-gold-edition-gog-wine-hd-patch
+runner: wine
+year: 1999
+version: GOG - HD Patch
+require-binaries: perl
+
+script:
+  files:
+  - installer: "N/A:Please select the GOG Windows Installer"
+  - patch: "N/A:Select the SFC1 HD patch.zip"
+  game:
+    gogid: 1429172763
+    prefix: $GAMEDIR
+    exe: "$GAMEDIR/drive_c/GOG Games/Star Trek - Starfleet Command/Launch Star Trek - Starfleet Command.lnk"
+    working_dir: "$GAMEDIR/drive_c/GOG Games/Star Trek - Starfleet Command/"
+  installer:
+  - task:
+      executable: installer
+      name: wineexec
+  - extract:
+      name: "Extracting SFC1 HD patch.zip"
+      dst: $CACHE
+      file: patch
+  - merge:
+      dst: "$GAMEDIR/drive_c/GOG Games/Star Trek - Starfleet Command/"
+      src: $CACHE
+  - input_menu:
+      description: "Choose the Resolution:"
+      id: RES
+      options:
+      - "Width=640\nHeight=480": "640x480"
+      - "Width=800\nHeight=600": "800x600"
+      - "Width=1280\nHeight=720": "1280x720"
+      - "Width=1360\nHeight=768": "1360x768"
+      - "Width=1366\nHeight=768": "1366x768"
+      - "Width=1600\nHeight=900": "1600x900"
+      - "Width=1920\nHeight=1080": "1920x1080"
+      preselect: "Width=1920\nHeight=1080"
+  - execute:
+      description: "Setting Resolution"
+      command: perl -i -p0e 's/Width=1280.*Height=720/$INPUT_RES/smg' "$GAMEDIR/drive_c/GOG Games/Star Trek - Starfleet Command/sfc.ini"
