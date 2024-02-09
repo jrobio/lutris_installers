@@ -2,39 +2,49 @@ name: "Star Trek: Starfleet Command - Orion Pirates"
 game_slug: star-trek-starfleet-command-orion-pirates
 description: "Installs Hot and Spicy Forums patched SFCOP and community addons."
 notes: |
-  This script installs Star Trek: Starfleet Command - Orion Pirates v2.564 
-  through Wine. It also installs updated models and specs (OPPlus411) and the 
-  SFC2EAW campaign missions.
+  This script installs **Star Trek: Starfleet Command - Orion Pirates** Hot and 
+  Spicy Forums community patch v2.564 through Wine. It also installs updated 
+  models and specs (OPPlus411) and the SFC2EAW campaign missions.
 
-  - Expects an archive of [Starfleet Command Orion Pirates v2.564](https://hotandspicyforums.com/viewtopic.php?p=254917#p254917)
-  - Expects an archive of [OPPlus411 - Models and Specs](https://hotandspicyforums.com/viewtopic.php?p=254921#p254921)
-  - Expects an archive of [EAW campaigns for OP](https://hotandspicyforums.com/viewtopic.php?p=254921#p254921)
+  - Expects a 7z archive of [Starfleet Command Orion Pirates v2.564](https://hotandspicyforums.com/viewtopic.php?p=254917#p254917)
+  - Expects a rar archive of [OPPlus411 - Models and Specs](https://hotandspicyforums.com/viewtopic.php?p=254921#p254921)
+  - Expects a zip archive of [EAW campaigns for OP](https://hotandspicyforums.com/viewtopic.php?p=254921#p254921)
   - Please report issues to the lutris_installer repo: 
   https://github.com/jrobio/lutris_installers
 
   ## Wine Install Notes
 
-  - After the installer completes, set screen resolution in 
-  `$GAMEDIR/drive_c/SFCOP/sfc.ini` file, [3D] section. Available resolutions 
-  are:
-    - 640x480
-    - 800x600
-    - 1280x720
-    - 1366x768
-    - 1440x900
-    - 1600x900
-    - 1920x1080
+  - Installer will prompt user for desired resolution from supported options, 
+  including:
+      - `640x480`
+      - `800x600`
+      - `1280x720`
+      - `1366x768`
+      - `1600x900`
+      - `1920x1080`
+  - The installer Requires `perl`, but most linux distributions should have this 
+  as a default package.
 
   ## Known Issues
 
   - The tutorial mission "Science 310" will instantly destroy the ship at 
   launch. This is caused by the OPPlus411 package. Potential workarounds are 
   available at the following [link](https://hotandspicyforums.com/sfc2op-2-564-tutorial-missions-bugged-command-190--t37396.html)
+
+  ## Acknowledgements
+
+  - [HotandSpicyForums](https://hotandspicyforums.com/starfleet-command-orion-pirates-2500-2564-patch-t25292.html) 
+  and the team of users contributing to patch 2.564, D4v1ks, TarMinyatur, Adam, 
+  Javora, DarkDrone and Falconer. Their work makes running Orion Pirates on 
+  modern systems, and linux, possible. Thank you!
+  - [Trek Core](https://gaming.trekcore.com/orionpirates/index.html) for 
+  maintaining accurate and obscure information and media about all things Star 
+  Trek.
 slug: star-trek-starfleet-command-orion-pirates-plus-mod
 runner: wine
 year: 2001
 version: SFCOP v2.564 + OPplus411 + EAW campaigns
-require-binaries: unrar
+require-binaries: unrar, perl
 
 script:
   files:
@@ -67,3 +77,17 @@ script:
   - merge:
       dst: $GAMEDIR/drive_c/SFCOP
       src: $CACHE
+  - input_menu:
+      description: "Choose the Resolution:"
+      id: RES
+      options:
+      - "Width=640\nHeight=480": "640x480"
+      - "Width=800\nHeight=600": "800x600"
+      - "Width=1280\nHeight=720": "1280x720"
+      - "Width=1366\nHeight=768": "1366x768"
+      - "Width=1600\nHeight=900": "1600x900"
+      - "Width=1920\nHeight=1080": "1920x1080"
+      preselect: "Width=1920\nHeight=1080"
+  - execute:
+      description: "Setting Resolution"
+      command: perl -i -p0e 's/Width=800.*Height=600/$INPUT_RES/smg' "$GAMEDIR/drive_c/SFCOP/sfc.ini"
