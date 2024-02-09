@@ -2,7 +2,7 @@ name: "Star Trek: The Game Show"
 game_slug: star-trek-the-game-show
 description: "Star Trek: The Game Show. Abandonware for Wine."
 notes: |
-  This script installs Star Trek: The Game Show through Wine.
+  This script installs **Star Trek: The Game Show** through Wine.
 
   - This installer expects a mounted disc containing the game.
   - Please report issues to the lutris_installer repo: 

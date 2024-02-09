@@ -1,6 +1,6 @@
 # Star Trek: The Game Show
 
-This script installs Star Trek: The Game Show through Wine.
+This script installs **Star Trek: The Game Show** through Wine.
 
 - This installer expects a mounted disc containing the game.
 - Please report issues to the lutris_installer repo: 
