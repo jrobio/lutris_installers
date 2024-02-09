@@ -1,8 +1,8 @@
 # Star Trek: Starfleet Command - Orion Pirates
 
-This script installs Star Trek: Starfleet Command - Orion Pirates v2.564 through
- Wine. It also installs updated models and specs (OPPlus411) and the SFC2EAW 
- campaign missions.
+This script installs **Star Trek: Starfleet Command - Orion Pirates** Hot and 
+Spicy Forums community patch v2.564 through Wine. It also installs updated 
+models and specs (OPPlus411) and the SFC2EAW campaign missions.
 
 - Expects a 7z archive of [Starfleet Command Orion Pirates v2.564](https://hotandspicyforums.com/viewtopic.php?p=254917#p254917)
 - Expects a rar archive of [OPPlus411 - Models and Specs](https://hotandspicyforums.com/viewtopic.php?p=254921#p254921)
@@ -12,15 +12,16 @@ https://github.com/jrobio/lutris_installers
 
 ## Wine Install Notes
 
-- After the installer completes, set screen resolution in 
-`$GAMEDIR/drive_c/SFCOP/sfc.ini` file, `[3D]` section. Available resolutions are:
-  - 640x480
-  - 800x600
-  - 1280x720
-  - 1366x768
-  - 1440x900
-  - 1600x900
-  - 1920x1080
+- Installer will prompt user for desired resolution from supported options, 
+including:
+    - `640x480`
+    - `800x600`
+    - `1280x720`
+    - `1366x768`
+    - `1600x900`
+    - `1920x1080`
+- The installer Requires `perl`, but most linux distributions should have this 
+as a default package.
 
 ## Known Issues
 
