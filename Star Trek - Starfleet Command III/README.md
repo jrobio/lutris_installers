@@ -1,6 +1,7 @@
 # Star Trek: Starfleet Command III
 
-This script installs Star Trek: Starfleet Command III through Wine.
+This script installs **Star Trek: Starfleet Command III** and the SFC Upgrade 
+mod 3.3 All in One through Wine.
 
 - This installer expects a zipped archive of 
 [Jan_B's](https://www.moddb.com/members/jan-b) SFC Upgrade mod 3.3 All in One 
@@ -14,10 +15,11 @@ https://github.com/jrobio/lutris_installers
 
 - Default install location and parameters offered through the GOG Installer are 
 recommended
-- After GOG's installer completes "EXIT" the launcher.
+- After GOG's installer completes `EXIT` the launcher.
 - Default install location and parameters offered through the SFC Upgrade 3.3 
 All in One Installer are recommended
-- Launch dxcfg.exe within your prefix and make changes specific to your system.
+- Launch `dxcfg.exe` within your prefix and make changes specific to your 
+system.
 
 ## Known Issues
 
