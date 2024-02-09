@@ -3,11 +3,11 @@ game_slug: star-trek-the-next-generation-a-final-unity
 description: "Star Trek: The Next Generation - A Final Unity. Abandonware for 
 DOSBox."
 notes: |
-  This script installs Star Trek: The Next Generation - A Final Unity through 
-  DOSBox.
+  This script installs **Star Trek: The Next Generation - A Final Unity** 
+  through DOSBox.
 
-  - The installer expects either a zipped archive containing an NRG or an ISO 
-  of the game.
+  - The installer expects either a zipped archive containing an `NRG` or an 
+  `ISO` of the game.
   - Please report issues to the lutris_installer repo: 
   https://github.com/jrobio/lutris_installers
 
@@ -26,8 +26,8 @@ notes: |
 
   ### ISO
 
-  - This installer expects an ISO named `Star Trek The Next Generation - A Final
-   Unity.iso`
+  - This installer expects an ISO named 
+  `Star Trek The Next Generation - A Final Unity.iso`
   - Select this install script if your system cannot easily add binaries from a 
   traditional package manager (ex. Valve's Steam Deck) and instead would rely on
    a flatpak of PowerISO to achieve a conversion from NRG to ISO.
