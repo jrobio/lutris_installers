@@ -37,7 +37,7 @@ notes: |
 slug: star-trek-stafleet-command-gold-edition-gog-wine-hd-patch
 runner: wine
 year: 1999
-version: GOG Windows - HD Patch
+version: GOG - HD Patch
 require-binaries: perl
 
 script:
