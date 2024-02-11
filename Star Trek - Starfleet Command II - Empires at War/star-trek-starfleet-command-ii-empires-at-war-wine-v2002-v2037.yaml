@@ -12,6 +12,7 @@ script:
   files:
   - v2036: https://gaming.trekcore.com/starfleetcommand2/downloads/sfc2patch2002-2036.exe
   - v2037: "N/A:Select archive StarFleet_2037.zip"
+  - manual: "https://gaming.trekcore.com/starfleetcommand2/downloads/sfc2.pdf"
   game:
     exe: "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/SFC2.exe"
     prefix: $GAMEDIR
@@ -71,6 +72,9 @@ script:
   - merge:
       dst: "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/"
       src: $CACHE/patch_v2037
+  - move:
+      src: manual
+      dst: "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/"
   - input_menu:
       description: "Choose the Resolution:"
       id: RES
