@@ -10,6 +10,7 @@ required-binaries: perl, sed
 
 script:
   files:
+  - bonus: https://gaming.trekcore.com/starfleetcommand2/downloads/sfc2bonusmissionpatch.exe
   - v2036: https://gaming.trekcore.com/starfleetcommand2/downloads/sfc2patch2002-2036.exe
   - v2037: "N/A:Select archive StarFleet_2037.zip"
   - manual: "https://gaming.trekcore.com/starfleetcommand2/downloads/sfc2.pdf"
@@ -42,6 +43,11 @@ script:
   - task:
       description: "Installing game"
       executable: $CACHE/cdrom/Setup.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - task:
+      description: "Installing Bonus Missions"
+      executable: bonus
       name: wineexec
       prefix: $GAMEDIR
   - task:
