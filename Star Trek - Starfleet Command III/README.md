@@ -1,13 +1,12 @@
 # Star Trek: Starfleet Command III
 
-This script installs **Star Trek: Starfleet Command III** and the SFC Upgrade 
-mod 3.3 All in One through Wine.
+This script installs **Star Trek: Starfleet Command III**, Nemesis Add-on, and 
+the SFC Upgrade mod 3.3 All in One through Wine.
 
 - This installer expects a zipped archive of 
 [Jan_B's](https://www.moddb.com/members/jan-b) SFC Upgrade mod 3.3 All in One 
 Installer available through 
-[ModDB](https://www.moddb.com/mods/sfc-upgrade-mod-33-all-in-one/downloads/
-sfc-upgrade-mod-3-3-all-in-one).
+[ModDB](https://www.moddb.com/mods/sfc-upgrade-mod-33-all-in-one/downloads/sfc-upgrade-mod-3-3-all-in-one).
 - Please report issues to the lutris_installer repo: 
 https://github.com/jrobio/lutris_installers
 
