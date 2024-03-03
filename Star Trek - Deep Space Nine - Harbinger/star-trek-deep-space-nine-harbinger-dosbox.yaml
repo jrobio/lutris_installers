@@ -1,7 +1,9 @@
 name: "Star Trek: Deep Space Nine - Harbinger"
 game_slug: star-trek-deep-space-nine-harbinger
-description: "Star Trek: Deep Space Nine - Harbinger. Abandonware for DOSBox."
+description: "Star Trek: Deep Space Nine - Harbinger. DOSBox."
 notes: |
+  # Star Trek: Deep Space Nine - Harbinger
+
   This script installs **Star Trek: Deep Space Nine - Harbinger** through 
   DOSBox.
 
@@ -13,7 +15,7 @@ notes: |
   ## DOSBox Install Notes
 
   - Accept the License information by typing `YES`
-  - Default selections for installtion, video, and audio configuration are 
+  - Default selections for installation, video, and audio configuration are 
   appropriate and expected.
 
   ## Known Issues
@@ -24,9 +26,8 @@ notes: |
 
   ## Acknowledgements
 
-  - [MyAbandonware](https://www.myabandonware.com/game/star-trek-deep-space-nine-harbinger-dka) 
-  for keeping old games alive and providing excellent install instructions in 
-  the comments.
+  - [MyAbandonware](https://www.myabandonware.com/) for keeping old games alive 
+  and providing excellent install instructions in the comments.
   - [Trek Core](https://gaming.trekcore.com/harbinger/) for maintaining accurate 
   and obscure information and media about all things Star Trek.
 slug: star-trek-deep-space-nine-harbinger-installer

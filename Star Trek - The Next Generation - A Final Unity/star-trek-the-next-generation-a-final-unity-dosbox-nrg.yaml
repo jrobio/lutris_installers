@@ -1,7 +1,9 @@
 name: "Star Trek: The Next Generation - A Final Unity"
 game_slug: star-trek-the-next-generation-a-final-unity
-description: "Star Trek: The Next Generation - A Final Unity. Abandonware for DOSBox."
+description: "Star Trek: The Next Generation - A Final Unity - DOSBox."
 notes: |
+  # Star Trek: The Next Generation - A Final Unity
+
   This script installs **Star Trek: The Next Generation - A Final Unity** 
   through DOSBox.
 
@@ -39,8 +41,8 @@ notes: |
   ## Acknowledgements
 
   - [Greg Kokanosky](http://gregory.kokanosky.free.fr/v4/) for creating nrg2iso.
-  - [MyAbandonware](https://www.myabandonware.com/game/star-trek-the-next-generation-a-final-unity-3qm) 
-  for keeping old games alive and for the helpful community.
+  - [MyAbandonware](https://www.myabandonware.com/) for keeping old games alive 
+  and for the helpful community.
   - [Trek Core](https://gaming.trekcore.com/finalunity/) for maintaining 
   accurate and obscure information as well as media about all things Star Trek.
 slug: star-trek-the-next-generation-a-final-unity-dosbox-nrg

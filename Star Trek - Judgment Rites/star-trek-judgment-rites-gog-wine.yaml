@@ -3,6 +3,8 @@ game_slug: star-trek-judgment-rites
 version: GOG Windows
 description: "Star Trek: Judgment Rites"
 notes: |
+  # Star Trek: Judgement Rites
+
   This script installs **Star Trek: Judgment Rites** through Wine.
 
   - This installer expects the GOG Windows version of 

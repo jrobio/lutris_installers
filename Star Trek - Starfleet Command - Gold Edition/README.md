@@ -1,7 +1,7 @@
 # Star Trek: Starfleet Command - Gold Edition
 
-This script installs **Star Trek: Starfleet Command - Gold Edition** and the SFC
-1 HD patch through Wine.
+This script installs **Star Trek: Starfleet Command - Gold Edition** and the 
+SFC 1 HD patch through Wine.
 
 - Expects the GOG Windows version of 
 [**Star Trek: Starfleet Command - Gold Edition**](https://www.gog.com/en/game/star_trek_starfleet_command_gold_edition)
@@ -32,5 +32,5 @@ figuring out the rights on old games ain't easy, it is appreciated.
 - [Trek Core](https://gaming.trekcore.com/starfleetcommand/) for maintaining 
 accurate and obscure information as well as media about all things Star Trek.
 - [HotandSpicyForums](https://hotandspicyforums.com/sfc-1-hd-patch-t24716.html) 
-and user D41ks for creating the SFC1 HD patch and many other improvements to the
-other SFC games.
+and user D41ks for creating the SFC1 HD patch and many other improvements to 
+the other SFC games.
