@@ -82,5 +82,5 @@ script:
   - execute:
       name: Enabling old ModelRendererR.dll
       command: >-
-      mv "$GAMEDIR/drive_c/GOG\ Games/Star\ Trek\ SFC3/Components/ModelRendererR_old.dll" 
-      "$GAMEDIR/drive_c/GOG\ Games/Star\ Trek\ SFC3/Components/ModelRendererR.dll"
+        mv "$GAMEDIR/drive_c/GOG\ Games/Star\ Trek\ SFC3/Components/ModelRendererR_old.dll" 
+        "$GAMEDIR/drive_c/GOG\ Games/Star\ Trek\ SFC3/Components/ModelRendererR.dll"
