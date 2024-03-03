@@ -5,7 +5,8 @@ Sulu bonus missions, patches it to the latest official version (v2036), and
 adds the Hot and Spicy Forums community patch v2037.
 
 - Expects the cdrom version of the game
-- Expects a zip archive of [Starfleet_2037](https://hotandspicyforums.com/sfc2-empires-at-war-patch-2-037-t20068.html)
+- Expects a zip archive of 
+[Starfleet_2037](https://hotandspicyforums.com/sfc2-empires-at-war-patch-2-037-t20068.html)
 - Please report issues to the lutris_installer repo: 
 https://github.com/jrobio/lutris_installers
 
