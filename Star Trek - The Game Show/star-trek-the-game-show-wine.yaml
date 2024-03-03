@@ -2,6 +2,8 @@ name: "Star Trek: The Game Show"
 game_slug: star-trek-the-game-show
 description: "Star Trek: The Game Show. Abandonware for Wine."
 notes: |
+  # Star Trek: The Game Show
+
   This script installs **Star Trek: The Game Show** through Wine.
 
   - This installer expects a mounted disc containing the game.
@@ -17,8 +19,8 @@ notes: |
 
   ## Acknowledgements
 
-  - [MyAbandonware](https://www.myabandonware.com/search/q/star+trek+the+game+show) 
-  for keeping old games alive and for the helpful community.
+  - [MyAbandonware](https://www.myabandonware.com/) for keeping old games alive 
+  and for the helpful community.
   - [Trek Core](https://gaming.trekcore.com/gameshow/) for maintaining accurate 
   and obscure information as well as media about all things Star Trek.
 slug: star-trek-the-game-show-wine-iso

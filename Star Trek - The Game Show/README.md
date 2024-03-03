@@ -15,7 +15,7 @@ prefix, including your system mounted at `Z:`.
 
 ## Acknowledgements
 
-- [MyAbandonware](https://www.myabandonware.com/search/q/star+trek+the+game+show) 
-for keeping old games alive and for the helpful community.
+- [MyAbandonware](https://www.myabandonware.com/) for keeping old games alive 
+and for the helpful community.
 - [Trek Core](https://gaming.trekcore.com/gameshow/) for maintaining accurate 
 and obscure information as well as media about all things Star Trek.
