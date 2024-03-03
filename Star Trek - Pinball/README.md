@@ -18,8 +18,7 @@ for system installation.
 
 ## Acknowledgements
 
-- [MyAbandonware](https://www.myabandonware.com/) for 
-keeping old games alive and providing excellent install instructions in the 
-comments.
+- [MyAbandonware](https://www.myabandonware.com/) for keeping old games alive 
+and providing excellent install instructions in the comments.
 - [Trek Core](https://gaming.trekcore.com/startrekpinball/) for maintaining 
 accurate and obscure information and media about all things Star Trek.
