@@ -3,8 +3,8 @@ game_slug: star-trek-starfleet-command-iii
 version: "GOG - SFC Upgrade 3.3"
 description: "Star Trek: Starfleet Command III with SFC Upgrade 3.3. GOG for Wine."
 notes: |
-  This script installs **Star Trek: Starfleet Command III** and the SFC Upgrade 
-  mod 3.3 All in One through Wine.
+  This script installs **Star Trek: Starfleet Command III**, Nemesis Add-on, and
+   the SFC Upgrade mod 3.3 All in One through Wine.
 
   - This installer expects a zipped archive of 
   [Jan_B's](https://www.moddb.com/members/jan-b) SFC Upgrade mod 3.3 All in One 
@@ -52,6 +52,7 @@ script:
     dxvk_version: v1.10.3
   files:
   - installer: "N/A:Select the game's setup file"
+  - nemesis: https://gaming.trekcore.com/starfleetcommand3/downloads/sfciii_nemesis_add-on.exe
   - mod: "N/A:Select the mod archive SFC_Upgrade_Mod_3.3_All_In_One.6.zip"
   game:
     gogid: 1156468375
@@ -61,6 +62,9 @@ script:
   installer:
   - task:
       executable: installer
+      name: wineexec
+  - task:
+      executable: nemesis
       name: wineexec
   - task:
       app: d3dxof
