@@ -1,8 +1,8 @@
 # Star Trek: Starfleet Command II - Empires at War
 
 This script installs **Star Trek: Starfleet Command II - Empires at War**, the
-Sulu bonus missions, patches it to the latest official version (v2036), and adds
-the Hot and Spicy Forums community patch v2037.
+Sulu bonus missions, patches it to the latest official version (v2036), and 
+adds the Hot and Spicy Forums community patch v2037.
 
 - Expects the cdrom version of the game
 - Expects a zip archive of [Starfleet_2037](https://hotandspicyforums.com/sfc2-empires-at-war-patch-2-037-t20068.html)
@@ -10,8 +10,8 @@ the Hot and Spicy Forums community patch v2037.
 https://github.com/jrobio/lutris_installers
 
 ## Wine Install Notes
-- Forfeit the Taldren upsell messages. They will provide an option to turn them
-off after 3 attempts.
+- Forfeit the Taldren upsell messages. They will provide an option to turn 
+them off after 3 attempts.
 - Do not install directx 7.
 - Installer will prompt user for desired resolution from supported options, 
 including:
@@ -26,8 +26,8 @@ including:
 as a default package.
 - Exit the notepads spawned by the patch installation process to continue
 installation.
-- Installation of the patches may hang for a few seconds after completion, this 
-is expected.
+- Installation of the patches may hang for a few seconds after completion, 
+this is expected.
 - Close the installer, rather than launch the game, on completion.
 
 ## Known Issues
@@ -42,5 +42,7 @@ and the users who put together the community patch.
 maintaining accurate and obscure information and media about all things Star 
 Trek.
 - Lutris community members [OJ1](https://forums.lutris.net/u/oj1/summary) and 
-[legluondunet](https://forums.lutris.net/u/legluondunet/summary) for helping me
-troubleshoot this install script.
+[legluondunet](https://forums.lutris.net/u/legluondunet/summary) for helping 
+me troubleshoot this install script.
+- [Archive.org](https://archive.org/) for helping to keep old and abandoned
+software available.
