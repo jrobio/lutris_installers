@@ -24,13 +24,13 @@ script:
       prefix: $GAMEDIR
   - insert-disc:
       description: "Please mount/insert disc 1"
-      requires: Setup.exe
+      requires: Autostart.exe
   - merge:
       dst: $CACHE/cdrom
       src: $DISC
   - execute:
       description: "Changing Permissions"
-      command: chmod 744 -R $CACHE/cdrom
+      command: chmod 755 -R $CACHE/cdrom
   - insert-disc:
       description: "Please mount/insert disc 2"
       requires: data2.cab
@@ -39,10 +39,10 @@ script:
       src: $DISC
   - execute:
       description: "Changing Permissions"
-      command: chmod 744 -R $CACHE/cdrom
+      command: chmod 755 -R $CACHE/cdrom
   - task:
       description: "Installing game"
-      executable: $CACHE/cdrom/Setup.exe
+      executable: $CACHE/cdrom/Autostart.exe
       name: wineexec
       prefix: $GAMEDIR
   - task:
@@ -55,26 +55,27 @@ script:
       executable: v2036
       name: wineexec
       prefix: $GAMEDIR
+      return_code: 18432
   - extract:
       name: "Extracting patch v2037"
       dst: $CACHE/patch_v2037
       file: v2037
   - execute:
       name: "Creating structure to support merging patch v2037"
-      working_dir: $CACHE/patch_v2037
-      command: mkdir -p Assets/{Strings,specs,Sprites}
+      command: mkdir -p $CACHE/patch_v2037/Assets/{Strings,specs,Sprites}
   - execute:
       name: "Moving files to Assets/Strings"
-      working_dir: $CACHE/patch_v2037
-      command: mv -t Assets/Strings strings.txt quicktips.txt aaStrings.txt
+      command: mv -t $CACHE/patch_v2037/Assets/Strings $CACHE/patch_v2037/strings.txt $CACHE/patch_v2037/quicktips.txt $CACHE/patch_v2037/aaStrings.txt
   - execute:
       name: "Moving files to Assets/specs"
-      working_dir: $CACHE/patch_v2037
-      command: mv -t Assets/specs shiplist.txt ftrlist.txt
+      command: mv -t $CACHE/patch_v2037/Assets/specs $CACHE/patch_v2037/shiplist.txt $CACHE/patch_v2037/ftrlist.txt
   - execute:
       name: "Moving files to Assets/Sprites"
       working_dir: $CACHE/patch_v2037
-      command: mv -t Assets/Sprites sprites.q3
+      command: mv -t $CACHE/patch_v2037/Assets/Sprites $CACHE/patch_v2037/sprites.q3
+  - execute:
+      description: "Changing Permissions"
+      command: chmod 755 -R "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/"
   - merge:
       dst: "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/"
       src: $CACHE/patch_v2037
@@ -100,8 +101,8 @@ script:
       description: "Fullscreen or Borderless Windowed Mode?"
       id: WIN
       options:
-      - 0: "Fullscreen"
-      - 1: "Borderless Window"
+      - "0": "Fullscreen"
+      - "1": "Borderless Window"
       preselect: "Fullscreen"
   - execute:
       description: "Setting Window Mode"
