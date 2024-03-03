@@ -97,15 +97,8 @@ script:
   - execute:
       description: "Setting Resolution"
       command: perl -i -p0e 's/width=1366.*height=768/$INPUT_RES/smg' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"
-  - input_menu:
-      description: "Fullscreen or Borderless Windowed Mode?"
-      id: WIN
-      options:
-      - "0": "Fullscreen"
-      - "1": "Borderless Window"
-      preselect: "Fullscreen"
   - execute:
       description: "Setting Window Mode, Turning on Music/Voice"
-      command: sed -i -e 's/windowed=1/windowed=$INPUT_WIN/' -e 's/MusicVolume=0/MusicVolume=25/' -e 's/VoiceVolume=0/VoiceVolume=25/' -e 's/voice=0/voice=3/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"
+      command: sed -i -e 's/windowed=1/windowed=0/' -e 's/MusicVolume=0/MusicVolume=25/' -e 's/VoiceVolume=0/VoiceVolume=25/' -e 's/voice=0/voice=3/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"
   wine:
     dgvoodoo2: true
