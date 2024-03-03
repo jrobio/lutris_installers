@@ -105,13 +105,7 @@ script:
       - "1": "Borderless Window"
       preselect: "Fullscreen"
   - execute:
-      description: "Setting Window Mode"
-      command: sed -i 's/windowed=1/windowed=$INPUT_WIN/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"
-  - execute:
-      description: "Turning on Music"
-      command: sed -i 's/MusicVolume=0/MusicVolume=25/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"
-  - execute:
-      description: "Turning on Voice"
-      command: sed -i 's/VoiceVolume=0/VoiceVolume=25/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"  
+      description: "Setting Window Mode, Turning on Music/Voice"
+      command: sed -i -e 's/windowed=1/windowed=$INPUT_WIN/' -e 's/MusicVolume=0/MusicVolume=25/' -e 's/VoiceVolume=0/VoiceVolume=25/' -e 's/voice=0/voice=3/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"
   wine:
     dgvoodoo2: true
