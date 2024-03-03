@@ -107,3 +107,5 @@ script:
   - execute:
       description: "Setting Window Mode"
       command: sed -i 's/windowed=1/windowed=$INPUT_WIN/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"
+  wine:
+    dgvoodoo2: true
