@@ -107,5 +107,11 @@ script:
   - execute:
       description: "Setting Window Mode"
       command: sed -i 's/windowed=1/windowed=$INPUT_WIN/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"
+  - execute:
+      description: "Turning on Music"
+      command: sed -i 's/MusicVolume=0/MusicVolume=25/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"
+  - execute:
+      description: "Turning on Voice"
+      command: sed -i 's/VoiceVolume=0/VoiceVolume=25/' "$GAMEDIR/drive_c/Program Files (x86)/Taldren/Starfleet Command II/sfc.ini"  
   wine:
     dgvoodoo2: true
