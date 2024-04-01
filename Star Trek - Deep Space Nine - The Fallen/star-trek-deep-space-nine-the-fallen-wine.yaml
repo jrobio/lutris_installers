@@ -1,0 +1,70 @@
+name: "Star Trek: Deep Space Nine - The Fallen"
+game_slug: star-trek-deep-space-nine-the-fallen
+description: |
+  Star Trek: Deep Space Nine - The Fallen with latest official patches and 
+  dgvoodoo2 for D3D support.
+notes: |
+  # Star Trek: Deep Space Nine - The Fallen
+
+  This script installs **Star Trek: Deep Space Nine - The Fallen** through Wine.
+
+  - Please report issues to the lutris_installer repo: 
+  https://github.com/jrobio/lutris_installers
+
+  ## Wine Install Notes
+
+  - On first launch the game will also prompt you to select a display renderer.
+  `D3D` is recommended as it is provided through `dgvoodoo2`.
+  - Also on first launch, the game will generate the configuration file 
+  `ds9.ini` located at `$GAMEDIR/Program Files (x86)/DS9TheFallen/system/`.
+  - Settings specific to the renderer may not be exposed in a GUI menu. 
+  Configuration options are available under `[D3DDrv.D3DRenderDevice]` in 
+  `ds9.ini`.
+
+  ## Acknowledgements
+
+  - [Trek Core](https://gaming.trekcore.com/thefallen/) for maintaining accurate
+  and obscure information and media about all things Star Trek.
+  - [Archive.org](https://archive.org/) for helping to keep old and abandoned
+  software available.
+slug: star-trek-deep-space-nine-the-fallen-dgv2
+runner: wine
+year: 2000
+version: ISO + dgvoodoo2 -> D3D
+
+script:
+  files:
+  - v112100: https://gaming.trekcore.com/thefallen/downloads/Patch112100-a.zip
+  - mini: https://gaming.trekcore.com/thefallen/downloads/DS9_The_Fallen_Exe_and_Joystick_Patch.exe
+  game:
+    exe: "$GAMEDIR/drive_c/Program Files (x86)/DS9TheFallen/system/ds9.exe"
+    prefix: $GAMEDIR
+    working_dir: "$GAMEDIR/drive_c/Program Files (x86)/DS9TheFallen/system/"
+  installer:
+  - task:
+      name: create_prefix
+      prefix: $GAMEDIR
+  - insert-disc:
+      description: "Please mount disc"
+      requires: Setup.exe
+  - task:
+      description: "Installing game"
+      executable: $DISC/Setup.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - extract:
+      name: "Extracting patch v112100"
+      dst: $CACHE/v112100
+      file: v112100
+  - task:
+      description: "Patching to v112100"
+      executable: $CACHE/v112100/Patch112000-a.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - task:
+      description: "Patching mini code"
+      executable: mini
+      name: wineexec
+      prefix: $GAMEDIR
+  wine:
+    dgvoodoo2: true
