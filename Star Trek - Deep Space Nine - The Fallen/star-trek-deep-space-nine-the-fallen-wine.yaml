@@ -1,0 +1,47 @@
+name: "Star Trek: Deep Space Nine - The Fallen"
+game_slug: star-trek-deep-space-nine-the-fallen
+description: |
+  Star Trek: Deep Space Nine - The Fallen with latest official patches and 
+  dgvoodoo2 for D3D support.
+notes: 
+slug: star-trek-deep-space-nine-the-fallen-dgv2
+runner: wine
+year: 2000
+version: ISO + dgvoodoo2 -> D3D
+
+script:
+  files:
+  - v112100: https://gaming.trekcore.com/thefallen/downloads/Patch112100-a.zip
+  - mini: https://gaming.trekcore.com/thefallen/downloads/DS9_The_Fallen_Exe_and_Joystick_Patch.exe
+  game:
+    exe: "$GAMEDIR/drive_c/Program Files (x86)/DS9TheFallen/system/ds9.exe"
+    prefix: $GAMEDIR
+    working_dir: "$GAMEDIR/drive_c/Program Files (x86)/DS9TheFallen/system/"
+  installer:
+  - task:
+      name: create_prefix
+      prefix: $GAMEDIR
+  - insert-disc:
+      description: "Please mount disc"
+      requires: Setup.exe
+  - task:
+      description: "Installing game"
+      executable: $DISC/Setup.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - extract:
+      name: "Extracting patch v112100"
+      dst: $CACHE/v112100
+      file: v112100
+  - task:
+      description: "Patching to v112100"
+      executable: $CACHE/v112100/Patch112000-a.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - task:
+      description: "Patching mini code"
+      executable: mini
+      name: wineexec
+      prefix: $GAMEDIR
+  wine:
+    dgvoodoo2: true
