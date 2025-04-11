@@ -1,0 +1,50 @@
+name: "Star Trek: Deep Space Nine - Dominion Wars"
+game_slug: star-trek-deep-space-nine-dominion-wars
+description: "Installs Dominion Wars, applies patches, enables dgvoodoo2"
+notes: 
+slug: star-trek-deep-space-nine-dominion-wars-dgv2
+runner: wine
+year: 2001
+version: "ISO v1.03"
+
+script:
+  wine:
+    dgvoodoo2: true
+    overrides:
+      ddra2.dll: n
+  files:
+  - v104: https://gaming.trekcore.com/dominionwars/downloads/dw104e.exe
+  - nocd: "N/A:Select archive Star-Trek-Deep-Space-Nine---Dominion-Wars_NoCD_Win_EN.zip"
+  game:
+      exe: "$GAMEDIR/drive_c/Program Files (x86)/PAN Interactive/Dominion Wars/ds9dw.exe"
+      prefix: $GAMEDIR
+      working_dir: "$GAMEDIR/drive_c/Program Files (x86)/PAN Interactive/Dominion Wars/"
+  installer:
+  - task:
+      name: create_prefix
+      prefix: $GAMEDIR
+  - task:
+      app: winxp
+      name: winetricks
+      prefix: $GAMEDIR
+  - insert-disc:
+      description: "Please mount disc"
+      requires: "Setup.exe"
+  - task:
+      description: "Installing game"
+      executable: $DISC/Setup.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - task:
+      description: "Applying patch v1.03 -> v1.04"
+      executable: v104
+      name: wineexec
+      prefix: $GAMEDIR
+      working_dir: "$GAMEDIR/drive_c/Program Files (x86)/PAN Interactive/Dominion Wars/"
+  - extract:
+      description: "Extracting NoCD patch"
+      dst: $CACHE/nocd
+      file: nocd
+  - merge:
+      dst: "$GAMEDIR/drive_c/Program Files (x86)/PAN Interactive/Dominion Wars/"
+      src: $CACHE/nocd
